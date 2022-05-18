@@ -8,6 +8,7 @@ import { redisConfig } from 'src/configs/redis.config';
 import { DATABASE_CONNECTION_NAME } from 'src/modules/database/database.constant';
 import { DatabaseModule } from 'src/modules/database/database.module';
 import { DatabaseService } from 'src/modules/database/database.service';
+import { DemoModule } from 'src/modules/demo/demo.module';
 import { HttpClientModule } from 'src/shares/http-clients/http.module';
 import { KafkaModule } from 'src/shares/kafka-client/kafka-module';
 
@@ -31,5 +32,6 @@ const Modules = [
     imports: [DatabaseModule],
     useFactory: (databaseService: DatabaseService) => databaseService.createMongooseOptions(),
   }),
+  DemoModule,
 ];
 export default Modules;
