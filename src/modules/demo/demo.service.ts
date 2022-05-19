@@ -17,7 +17,7 @@ export class DemoService {
     return demo.save();
   }
 
-  getAll(): Observable<any> {
-    return from(this.demoModel.find());
+  getAll(): Observable<DemoDocument[]> {
+    return from(this.demoModel.find().exec());
   }
 }

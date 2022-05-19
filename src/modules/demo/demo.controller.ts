@@ -2,6 +2,7 @@ import { Controller, Get, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { map, Observable } from 'rxjs';
 import { DemoService } from 'src/modules/demo/demo.service';
+import { DemoDocument } from 'src/schemas/demo.schema';
 import { ResponseDto } from 'src/shares/dtos/response.dto';
 
 @Controller('demo')
@@ -19,7 +20,7 @@ export class DemoController {
   }
 
   @Get()
-  getAll(): Observable<ResponseDto<any>> {
+  getAll(): Observable<ResponseDto<DemoDocument[]>> {
     return this.demoService.getAll().pipe(
       map((e) => {
         return {
