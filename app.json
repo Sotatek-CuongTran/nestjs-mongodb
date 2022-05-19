@@ -100,7 +100,7 @@
       "script": "dist/console.js",
       "args": "dex:withdrawal-event-crawler",
       "env": {
-        "MYSQL_LOG": true
+        "MONGO_LOG": true
       }
     },
     {

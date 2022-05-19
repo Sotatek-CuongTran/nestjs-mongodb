@@ -14,13 +14,13 @@ services:
 
   redis:
     image: 'redis:6-alpine'
-    container_name: sotadex-redis
+    container_name: ankr-redis
     ports:
       - 6380:6379
 
   zookeeper:
     image: 'bitnami/zookeeper:3.6.2'
-    container_name: sotadex-zookeeper
+    container_name: ankr-zookeeper
     ports:
       - 2183:2181
     environment:
@@ -28,7 +28,7 @@ services:
 
   kafka:
     image: 'bitnami/kafka:2.6.0'
-    container_name: sotadex-kafka
+    container_name: ankr-kafka
     ports:
       - 9093:9093
     environment:

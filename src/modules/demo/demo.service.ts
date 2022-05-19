@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { from, map, Observable } from 'rxjs';
 import { Demo, DemoDocument } from 'src/schemas/demo.schema';
 
 @Injectable()
@@ -16,7 +17,7 @@ export class DemoService {
     return demo.save();
   }
 
-  async getAll(): Promise<DemoDocument[]> {
-    return this.demoModel.find();
+  getAll(): Observable<any> {
+    return from(this.demoModel.find());
   }
 }

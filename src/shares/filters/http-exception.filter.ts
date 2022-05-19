@@ -13,7 +13,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const { code, statusCode, message, ...rest }: any = exception.getResponse();
 
     response.status(status).json({
-      code: code || 'SOTADEX_00000',
+      code: code || 'ANKR_00000',
       statusCode: statusCode || HttpStatus.INTERNAL_SERVER_ERROR,
       info: {
         message: message || 'Unknown errors',
