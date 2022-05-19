@@ -33,4 +33,3 @@ redis:
 kafka:
   brokers: KAFKA_BROKERS
 
-sentry_dns: SENTRY_DNS
