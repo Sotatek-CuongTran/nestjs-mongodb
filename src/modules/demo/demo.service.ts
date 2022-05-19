@@ -6,7 +6,7 @@ import { Demo, DemoDocument } from 'src/schemas/demo.schema';
 
 @Injectable()
 export class DemoService {
-  constructor(@InjectModel(Demo.name) private readonly demoModel: Model<DemoDocument>) {}
+  constructor(@InjectModel(Demo.name) private readonly demoModel: Model<DemoDocument>) { }
 
   async create(): Promise<DemoDocument> {
     const demo = new this.demoModel({
