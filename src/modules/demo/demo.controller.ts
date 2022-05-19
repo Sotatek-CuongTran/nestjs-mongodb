@@ -11,7 +11,7 @@ export class DemoController {
   constructor(private demoService: DemoService) {}
 
   @Post()
-  async create(): Promise<ResponseDto<any>> {
+  async create(): Promise<ResponseDto<DemoDocument>> {
     const res = await this.demoService.create();
     return {
       data: res,
