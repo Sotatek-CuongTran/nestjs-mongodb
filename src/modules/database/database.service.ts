@@ -34,7 +34,6 @@ export class DatabaseService implements MongooseOptionsFactory {
       mongooseOptions.dbName = mongoDatabaseConfig.database;
     }
 
-    console.log('\x1b[36m%s\x1b[0m', 'mongooseOptions', mongooseOptions);
     return mongooseOptions;
   }
 }

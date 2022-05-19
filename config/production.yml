@@ -15,7 +15,7 @@ app:
 database:
   host: MONGO_HOST
   port: MONGO_PORT
-  username: MONGO_USERNAME
+  user: MONGO_USERNAME
   password: MONGO_PASSWORD
   database: MONGO_DATABASE
   debug: MONGO_DEBUG
