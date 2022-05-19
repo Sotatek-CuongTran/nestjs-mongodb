@@ -1,7 +1,7 @@
 version: '3'
 services:
   mongodb:
-    container_name: mongodb
+    container_name: chainprotocol-mongodb
     image: mongo:4.4.6
     ports:
       - "27017:27017"
@@ -14,13 +14,13 @@ services:
 
   redis:
     image: 'redis:6-alpine'
-    container_name: ankr-redis
+    container_name: chainprotocol-redis
     ports:
       - 6380:6379
 
   zookeeper:
     image: 'bitnami/zookeeper:3.6.2'
-    container_name: ankr-zookeeper
+    container_name: chainprotocol-zookeeper
     ports:
       - 2183:2181
     environment:
@@ -28,7 +28,7 @@ services:
 
   kafka:
     image: 'bitnami/kafka:2.6.0'
-    container_name: ankr-kafka
+    container_name: chainprotocol-kafka
     ports:
       - 9093:9093
     environment:
