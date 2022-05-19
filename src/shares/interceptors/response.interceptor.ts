@@ -1,5 +1,4 @@
 import { Injectable, NestInterceptor, ExecutionContext, CallHandler, HttpStatus } from '@nestjs/common';
-import { classToPlain } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { getConfig } from 'src/configs';
@@ -12,9 +11,7 @@ export interface Response<T> {
 export class ResponseTransformInterceptor<T> implements NestInterceptor<T, Response<T>> {
   intercept(context: ExecutionContext, next: CallHandler): Observable<Response<T>> {
     return next.handle().pipe(
-      map((_data) => {
-        // @Exclude sensitive data
-        const data = classToPlain(_data);
+      map((data: any) => {
         const req = context.switchToHttp().getRequest();
 
         const metadata = {

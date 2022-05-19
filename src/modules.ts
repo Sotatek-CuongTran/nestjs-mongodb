@@ -32,6 +32,7 @@ const Modules = [
     imports: [DatabaseModule],
     useFactory: (databaseService: DatabaseService) => databaseService.createMongooseOptions(),
   }),
+  DatabaseModule,
   DemoModule,
 ];
 export default Modules;
